@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Frases Wiki</string>
+
+    <string name="buscar">Buscar</string>
+    <string-array name="criterio_busca">
+        <item>Temas</item>
+        <item>Autores</item>
+    </string-array>
+
+    <string name="submit">Calificanos</string>
+
+    <string name="et_busqueda">Ingrese su busqueda</string>
+
+    <string name="felicidad">Felicidad</string>
+    <string name="amistad">Amistad</string>
+    <string name="canciones">Canciones</string>
+    <string name="amor">Amor</string>
+    <string name="esperanza">Esperanza</string>
+    <string name="motivacion">Motivacion</string>
+    <string name="musica">Musica</string>
+    <string name="suenos">Sueños</string>
+    <string name="reflexion">Reflexion</string>
+
+    <string name="mas_popular">Busquedas mas populares</string>
+</resources>

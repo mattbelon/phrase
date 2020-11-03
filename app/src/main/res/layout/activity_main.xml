@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/cabecera"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_nav">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="14dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/menu"
+            android:onClick="showPopup" />
+
+        <TextView
+            android:id="@+id/tit_princ_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="55dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/contiee_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cabecera">
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/contenido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/scrolContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:textAlignment="center">
+
+                    <LinearLayout
+                        android:id="@+id/contiene_buscar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/layout_fondo"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/lay_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/layout_borde"
+                            android:orientation="vertical"
+                            android:padding="8sp">
+
+                            <Spinner
+                                android:id="@+id/spinner_buscar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_toEndOf="@+id/etBuscador"
+                                android:entries="@array/criterio_busca"
+                                android:spinnerMode="dialog" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_busqueda"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@drawable/layout_borde"
+                            android:orientation="horizontal"
+                            android:padding="8sp">
+
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical"
+                                app:srcCompat="@drawable/buscar" />
+
+                            <EditText
+                                android:id="@+id/editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@color/white"
+                                android:ems="10"
+                                android:hint="Ingrese una busqueda"
+                                android:inputType="textPersonName"
+                                android:padding="8sp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnBuscar"
+                            android:layout_width="170dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/ovalo_orange"
+                            android:text="@string/buscar"
+                            android:textColor="@color/white"
+                            android:textSize="18dp" />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:text="@string/mas_popular" />
+                    </LinearLayout>
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        app:columnCount="3"
+                        app:rowCount="3">
+
+
+
+                        <LinearLayout
+                            android:id="@+id/layFelicidad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="0"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="0">
+
+                            <ImageView
+                                android:id="@+id/imFelicidad"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_felicidad"
+                                app:layout_column="3"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tvFelicidad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/felicidad"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layAmistad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="1"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="0">
+
+                            <ImageView
+                                android:id="@+id/imAmistad"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_amistad" />
+                            <TextView
+                                android:id="@+id/tvAmistad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/amistad"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layCanciones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="2"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="0">
+
+                            <ImageView
+                                android:id="@+id/imCanciones"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_canciones" />
+
+                            <TextView
+                                android:id="@+id/tvCanciones"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/canciones"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layMotivacion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="2"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="1">
+
+                            <ImageView
+                                android:id="@+id/imMotivacion"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_motivacion" />
+
+                            <TextView
+                                android:id="@+id/tvMotivacion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/motivacion"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layEsperanza"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="1"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="1">
+
+                            <ImageView
+                                android:id="@+id/imEsperanza"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_esperanza" />
+
+                            <TextView
+                                android:id="@+id/tvEsperanza"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/esperanza"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layAmor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+
+                            app:layout_column="0"
+                            app:layout_row="1">
+
+                            <ImageView
+                                android:id="@+id/imAmor"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_amor" />
+
+                            <TextView
+                                android:id="@+id/tvAmor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/amor"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_column="3" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layMusica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="2"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="2">
+
+                            <ImageView
+                                android:id="@+id/imMusica"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_musica" />
+
+                            <TextView
+                                android:id="@+id/tvMusica"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/musica"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_column="3" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/laySuenos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="1"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="2">
+
+                            <ImageView
+                                android:id="@+id/imSuenos"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_suenos" />
+
+                            <TextView
+                                android:id="@+id/tvSuenos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/suenos"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_column="3" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layReflexion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_column="0"
+                            app:layout_gravity="center_horizontal"
+                            app:layout_row="2">
+
+                            <ImageView
+                                android:id="@+id/imReflexion"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:baselineAlignBottom="false"
+                                android:src="@drawable/cat_reflexion" />
+
+                            <TextView
+                                android:id="@+id/tvReflexion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/reflexion"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_column="3" />
+                        </LinearLayout>
+
+                    </androidx.gridlayout.widget.GridLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>
